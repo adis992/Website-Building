@@ -1,14 +1,6 @@
-var formClear = (function() {
-    function clearFormFields(form) {
-      var inputs = form.querySelectorAll('input');
-      inputs.forEach(function(input) {
-        input.value = '';
-      });
-      form.clearFormErrors();
-    }
-  
-    return {
-      clearFormFields: clearFormFields
-    };
-  })();
+var formClear = function() {
+    var formElement = document.getElementById("sign-up-form");
+    formElement.reset();
+    formElement.clearFormErrors();
+  }
   

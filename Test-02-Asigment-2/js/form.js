@@ -1,10 +1,9 @@
-var form = (function () {
+var formModule = (function () {
 
   function init() {
-    var formElement = document.querySelector('form'); // promijenjena varijabla form u formElement
+    var formElement = document.querySelector('form');
     var usernameInput = formElement.querySelector('#username');
     var passwordInput = formElement.querySelector('#password');
-
     usernameInput.addEventListener('input', function () {
       formIcons.showValidityIcon(usernameInput);
     });
@@ -26,9 +25,9 @@ var form = (function () {
       var errors = formValidation.checkFormValidity(formElement);
 
       if (errors.length > 0) {
-        form.showFormErrors(errors); // ovdje možete koristiti this.showFormErrors(errors) umjesto form.showFormErrors(errors)
+        formModule.showFormErrors(errors);
       } else {
-        this.clearFormErrors(); // ovdje možete koristiti formElement.clearFormErrors() umjesto this.clearFormErrors()
+        formElement.clearFormErrors();
         var successDiv = document.createElement('div');
         successDiv.classList.add('success');
         successDiv.innerText = 'Login successful!';
@@ -49,18 +48,17 @@ var form = (function () {
     });
 
     formElement.addEventListener('reset', function () {
-      this.clearFormErrors(); // ovdje možete koristiti formElement.clearFormErrors() umjesto this.clearFormErrors()
+      formElement.clearFormErrors();
       formIcons.removeValidityIcons();
     });
 
     usernameInput.addEventListener('focus', function () {
-      this.clearFormErrors(); // ovdje možete koristiti formElement.clearFormErrors() umjesto this.clearFormErrors()
+      formElement.clearFormErrors();
       var icon = usernameInput.parentNode.querySelector('.valid-icon');
       if (icon) {
         icon.parentNode.removeChild(icon);
       }
     });
-
   }
 
   function showFormErrors(errors) {
@@ -72,7 +70,7 @@ var form = (function () {
       errorDiv.innerText = error;
       errorsDiv.appendChild(errorDiv);
     });
-    var formElement = document.querySelector('form'); // promijenjena varijabla form u formElement
+    var formElement = document.querySelector('form');
     formElement.appendChild(errorsDiv);
   }
 
@@ -92,9 +90,16 @@ var form = (function () {
 
 })();
 
-document.addEventListener('DOMContentLoaded', function () {
-  form.init();
-});
-HTMLFormElement.prototype.clearFormErrors = function() {
-  // Implementacija funkcije
+HTMLFormElement.prototype.clearForm = function () {
+  var inputs = this.querySelectorAll('input');
+  inputs.forEach(function (input) {
+    input.value = '';
+  });
+  this.clearFormErrors();
 }
+
+var clearBtn = document.querySelector('#clear-btn');
+var formElement = document.querySelector('form');
+clearBtn.addEventListener('click', function () {
+  formElement.clearForm();
+});

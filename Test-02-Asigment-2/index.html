@@ -83,7 +83,8 @@
             </div>
 
             <input type="submit" value="Login">
-            <button id="clear-btn" type="button">Clear</button>
+            <button id="clear-btn" type="button" class="btn btn-outline-secondary">Clear</button>
+
         </form>
 
         <!-- ovdje dodajemo div s klasom errors -->
@@ -91,18 +92,12 @@
             <div class="error"></div>
         </div>
     </div>
-    <script>
-        var clearBtn = document.querySelector('#clear-btn');
-        var form = document.querySelector('form');
 
-        clearBtn.addEventListener('click', function () {
-            FormClear.clearFormFields(form);
-        });
-    </script>
     <script src="js/formValidation.js"></script>
+    <script src="js/form.js"></script>
     <script src="js/formIcons.js"></script>
     <script src="js/formClear.js"></script>
-    <script src="js/form.js"></script>
+    
     
 
 
