@@ -34,3 +34,4 @@ Kada lozinka nije uneta ili je uneta netačna lozinka, potrebno je prikazati sle
 Za prikaz ikonica na krajevima input elemenata, potrebno je koristiti neku od biblioteka sa vektorskim ikonicama – Google Material Design Icons ili Font Awesome. Za rešavanje assignmenta moguće je koristiti jQuery, ali to nije obavezno. Tako samostalno možete odlučiti da li ćete pisati čist JavaScript ili JavaScript uz korišćenje jQueryja.
 
 Napomena: Zadatak je potrebno dostaviti preko e-learning platforme kao zapakovan (zip ili rar) fajl.
+
