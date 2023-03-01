@@ -1,106 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <title>Assignment 2 - Website Building</title>
-    <style>
-      body {
-        box-sizing: border-box;
-        font-family: sans-serif;
-      }
-
-      #login-container {
-        width: 460px;
-        margin: 0 auto;
-      }
-
-      form label,
-      form input {
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      form input {
-        padding: 8px;
-      }
-
-      form label {
-        font-weight: bold;
-      }
-
-      form div {
-        margin: 16px 0px;
-      }
-
-      .invalid {
-        border: 1px solid red;
-      }
-
-      .invalid-icon::before {
-        content: "\f00d";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        color: red;
-      }
-
-      .valid {
-        border: 1px solid green;
-      }
-
-      .valid-icon::before {
-        content: "\f00c";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        color: green;
-      }
-
-      .error {
-        color: red;
-        font-size: 14px;
-        margin-top: 5px;
-      }
-
-      .error-icon {
-        margin-left: 5px;
-        color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="login-container">
-      <form>
-        <div>
-          <label for="username">Username:</label>
-          <input id="username" type="text" />
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-rR4jv4YB+L3qFGf2+tlyQ9SvUcGyW+w5e5G5ngM1LgZ2zKwAA/n/Tph1PWnktHNCI/jTYKoWk+oc1GeALjKcLw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/test02.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-6 ">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username"
+                            placeholder="Enter username">
+                        <i class="validation-icon"></i>
+                        <span class="error-icon"><i></i></span>
+                        <div class="error-message"></div>
+                        <div class="success-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Enter password">
+                        <i class="validation-icon"></i>
+                        <span class="error-icon"><i></i></span>
+                        <div class="error-message"></div>
+                        <div class="success-message"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="Submit">Submit/Log in</button>
+                    <button type="button" class="btn btn-secondary" id="reset-btn">Clear All</button>
+                </form>
+                <div id="error-container"></div>
+                <div id="success-container"></div>
+            </div>
         </div>
-
-        <div>
-          <label for="password">Password:</label>
-          <input id="password" type="password" />
-        </div>
-
-        <input type="submit" value="Login" />
-        <button id="clear-btn" type="reset" class="btn btn-outline-secondary">Clear</button>
-
-
-      </form>
-
-      <!-- ovdje dodajemo div s klasom errors -->
-      <div class="errors">
-        <div class="error"></div>
-      </div>
     </div>
-
-    <script src="js/formValidation.js"></script>
-    <script src="js/formIcons.js"></script>
-    <script src="js/form.js"></script>
-    <script src="js/formClear.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jsssss.js" ></script>
 </body>
-
 </html>

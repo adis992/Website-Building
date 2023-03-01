@@ -1,0 +1,172 @@
+body {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: #817e7e;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-height: 550px;
+    max-width: 100%;
+    text-align: center;
+}
+.form-group {
+    position: relative;
+    padding-top: 20px;
+}
+.validation-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* ovo će omogućiti da se klikovi prolaze kroz ikonu i da ne ometaju interakciju sa input poljem */
+}
+.validation-icon.error-icon::before {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    content: "\f00d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: red;
+    font-size: 1.2em;
+}
+    /* ovo će omogućiti da se klikovi prolaze kroz ikonu i da ne ometaju interakciju sa input poljem */
+.validation-icon.success-icon::before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #28a745;
+    font-size: 1.2em;
+}
+.error-message {
+    display: none;
+    color: red;
+}
+.success-message {
+    display: none;
+    color: green;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+/* povećavamo veličinu input polja */
+input {
+    font-size: 24px;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+/* dodajemo malo prostora između input polja */
+input:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+/* povećavamo veličinu fonta u naslovu forme */
+form h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+/* povećavamo veličinu fonta u porukama o greškama i uspešnom logovanju */
+.error-message,
+.success-message {
+    font-size: 20px;
+}
+/* dodajemo razmak između forma */
+form:not(:last-of-type) {
+    margin-bottom: 100px;
+}
+label {
+    font-size: 20px;
+}
+input.valid {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"%3E%3Cpath fill="%2328a745" d="M204.8 460.8c-9.9 0-19.8-3.8-27.4-11.4L51.2 320c-15.1-15.1-15.1-39.6 0-54.6s39.6-15.1 54.6 0l89.8 89.8 204.8-204.8c15.1-15.1 39.6-15.1 54.6 0s15.1 39.6 0 54.6L232.2 449.4c-7.6 7.6-17.5 11.4-27.4 11.4z"%3E%3C/path%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) 50%;
+    background-size: 20px;
+    padding-right: 30px;
+    border: 2px solid #28a745;
+}
+input .error-message {
+    display: block;
+    border: 1px solid red;
+}
+input .success-message {
+    display: block;
+    border: 1px solid green
+}
+.form-control::after {
+    content: " ";
+    position: absolute;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+.form-control {
+    position: relative;
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+.form-control .validation-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* ovo će omogućiti da se klikovi prolaze kroz ikonu i da ne ometaju interakciju sa input poljem */
+}
+.valid {
+    border: 1px solid green;
+}
+
+.invalid {
+    border: 1px solid red;
+}
+.error-message::before {
+    font-family: "Font Awesome";
+    content: "\f00d";
+    /* Unicode za X ikonicu u Font Awesome */
+    margin-right: 5px;
+}
+input.invalid {
+    border: 2px solid red;
+}
+#error-container {
+    color: red;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    height: 20px;
+}
+button {
+    width: 451.63px;
+    margin-top: 40px;
+    text-align: center;
+}
+.btn {
+    color: #fff;
+    background-color: #413911;
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+}
+.container-fluid {
+    padding-top: 100px;
+    margin-bottom: 50px;
+}
+h2 {
+    text-align: center;
+}
+ul,
+li {
+    font-size: 20px;
+    list-style-type: none;
+    margin: 10px 0;
+    text-align: center;
+}
+
+
