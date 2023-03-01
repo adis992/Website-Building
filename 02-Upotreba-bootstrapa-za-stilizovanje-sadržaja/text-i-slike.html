@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../01-Kreiranje-layouta-koriscenjem-bootstrap-a/Bootstrap_intro/css/bootstrap.min.css">
+    <title>Text i slike s bootstrapom</title>
+</head>
+
+<body>
+    <!--primjer 1
+    <h1>h1. Heading - 2.5rem</h1>   <!--automatska velicina h1 je 2.5rem-a ->
+    <p class="h1">This is like heading text</p>   <!--unutar 1 sekcije moze biti samo h1naslov a ovdje imamo potrebu 2 dijela txt-a  i moze se ovako postici sil texta->
+      -->
+    <!--primjer 2-->
+    <h1>This is heading
+        <small class="text-muted">This is small text</small>
+        <!--small text je uvek iste velicine i svijetlije boje od naslova samog-->
+    </h1>
+
+    <p> ovo je paragraf </p>
+    <p class="lead"> ovo je istaknuti paragraf</p>
+    <!--lead je istaknuti paragraf bootstrapa svijetlije boje i nesto malko uvecan na spram obicnog paragrafa-->
+
+
+    <p>This is regular paragraph text. <mark>This text is highlighted.</mark></p>
+    <p><del>This is deleted text.</del></p>
+    <p><s>This text is no longer accurate.</s></p>
+    <p><ins>This text is an addition to the document.</ins></p>
+    <p><u>This is underlined text.</u></p>
+    <p>This is regular paragraph text. <small>This text is smaller.</small></p>
+    <p>This is regular paragraph text. <strong>This text is emphasized using bold.</strong></p>
+    <p>This is regular paragraph text. <em>This is italicized text.</em></p>
+
+
+
+    <!--sa bootstrapom i klasama njegovim primjer-->
+    <p>This is regular paragraph text. <span class="mark">This text is highlighted.</span></p>
+    <!--mark je istaknuti text-->
+    <p>This is regular paragraph text. <span class="small">This text is smaller.</span></p> <!--small je mali text-->
+    <p class="text-monospace">This is monospace text.</p> <!--monospace je font koji je iste sirine za sve slova-->
+    <p class="text-lowercase">This TEXT is transformed using .text-lowercase class.</p>
+    <!--lowercase je text koji je u malim slovima-->
+    <p class="text-uppercase">This TEXT is transformed using .text-uppercase class.</p>
+    <!--uppercase je text koji je u velikim slovima-->
+    <p class="text-capitalize">This TEXT is transformed using .text-uppercase class.</p>
+    <!--capitalize je text koji je u velikim slovima na pocetku recenice-->
+    <a class="text-decoration-none" href="#">This link is transformed using .text-decoration-none class</a>
+    <!--text-decoration-none je da se ne vidi underline ispod linka-->
+
+    <blockquote> <!--blockquote je citat-->
+        <p class="blockquote">This is a blockquote. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+            posuere erat a ante.</p> <!--blockquote je citat-->
+        <footer class="blockquote-footer">Taken from: <cite>Lorem Ipsum</cite> </footer> <!--cite je citat-->
+    </blockquote>
+
+
+    <!--SLIKE-->
+    <img class="img-fluid" src="img/mockup-xl.jpg" alt="This is image">
+    <!--img-fluid je da slika bude fluidna tj da se prilagodi velicini ekrana-->
+    <img class="img-fluid rounded" src="img/mockup-xl.jpg" alt="This is image">
+    <!--rounded je da slika bude zaobljena-ivice-->
+    <img class="img-fluid rounded-circle" src="img/mockup-xl.jpg" alt="This is image">
+    <!--rounded-circle je da slika bude zaobljena-ivice i da bude u obliku kruga-->
+    <img class="img-fluid img-thumbnail" src="img/mockup-xl.jpg" alt="This is image">
+    <!--img-thumbnail je da slika bude zaobljena-ivice i da bude u obliku kruga i da ima border-->
+
+
+    <p class="text-center">mauris et mauris ligula.Nullam ante metus, tempor et facilisis laoreet, porta in nisl. </p>   <!--text-center je da se text poravna sa ili centrira-->
+    <div class="text-center">
+        <img class="img-fluid" src="img/mockup-xl.jpg" alt="This is image">   <!--text-center je da se text poravna sa ili centrira u ovom slucaju slika-->
+    </div>
+    <img class="img-fluid d-block mx-auto" src="img/mockup-xl.jpg" alt="This is image">  <!--na ovaj nacin moze bez div elementa
+        d-block je da se slika prikaze kao block element tj da se prikaze cijela i ona ce automatski ici na mx margin na x osi lijevu i desnu marginu na auto-->
+
+    <script src="../01-Kreiranje-layouta-koriscenjem-bootstrap-a/Bootstrap_intro/js/jquery-3.6.3.slim.min.js"></script>
+    <script src="../01-Kreiranje-layouta-koriscenjem-bootstrap-a/Bootstrap_intro/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

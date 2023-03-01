@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../01-Kreiranje-layouta-koriscenjem-bootstrap-a/Bootstrap_intro/css/bootstrap.min.css">
+    <title>liste i tabele</title>
+</head>
+
+<body>
+    <ul>
+        <li>nigredo
+            <ul>
+                <li>primo</li>
+                <li>secundo</li>
+            </ul>
+        </li>
+        <li>albedo</li>
+        <li>citrinitas</li>
+        <li>rubedo</li>
+    </ul>
+    <!--bootstrap ukida gornju marginu lista a za donju 1rem vrijednost-->
+
+    <ul class="list-unstyled">
+        <!--uklanja stilizaciju liste samo na glavnoj listi i ako zelimo i to moramo dodati na ul istu klasu-->
+        <li>nigredo
+            <ul class="list-unstyled">
+                <!--i ovako uklanja u potpunosti list style i padding za uvlacenje stavki liste-->
+                <li>primo</li>
+                <li>secundo</li>
+            </ul>
+        </li>
+        <li>albedo</li>
+        <li>citrinitas</li>
+        <li>rubedo</li>
+    </ul>
+
+
+    <!--primjer za koristenje navigacije sajta odnosno menu-item -->
+    <ul class="list-inline">
+        <!--stavke liste se poredaju jedna do druge,, ali sve dok ne damo class svakoj listi nece biti ucitano i neke promjene-->
+        <li class="list-inline-item">nigredo</li> <!--list-inline-item je klasa koja se dodaje svakoj stavci liste-->
+        <li class="list-inline-item">albedo</li>
+        <li class="list-inline-item">citrinitas</li>
+        <li class="list-inline-item">rubedo</li>
+    </ul>
+
+    <!--stilizacija tabela-->
+
+    <table class="table">
+        <!--table je element koji se koristi za kreiranje tabele a za stilizaciju s bootstrapom dodajemo class table-->
+        <thead> <!--thead je zaglavlje tabele-->
+            <tr> <!--tr je red u tabeli-->
+                <th scope="col">#</th> <!--scope je atribut koji se koristi za označavanje kolone ili reda u tabeli-->
+                <th scope="col">Character</th>
+                <th scope="col">Movie</th>
+                <th scope="col">Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Trelkovsky</td>
+                <td>Le locataire</td>
+                <td>1976</td>
+
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Rosemary Woodhouse</td>
+                <td>Rosemary's Baby</td>
+                <td>1968</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Paulina Escobar</td>
+                <td>Death and the Maiden</td>
+                <td>1994</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>David Kentley</td>
+                <td>Rope</td>
+                <td>1948</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Margot Wendice</td>
+                <td>Dial M for Murder</td>
+                <td>1954</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <table class="table table-striped"> <!--sa redovima u sivoj i bijeloj boj a da kucamo table-bordered onda je sa svim ivicama
+    isto imamo table-dark table-borderless hover table-bordered i mozemo ih kombinovati npr hover i dark-->
+        <thead class="thead-dark"> <!--samo zaglavje crno -->
+            <tr> <!--tr je red u tabeli-->
+                <th scope="col">#</th> <!--scope je atribut koji se koristi za označavanje kolone ili reda u tabeli-->
+                <th scope="col">Character</th>
+                <th scope="col">Movie</th>
+                <th scope="col">Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-success"> <!--boja redova kada je nesto uspjesno svijetlo zelena cca-->
+                <th scope="row">1</th>
+                <td>Trelkovsky</td>
+                <td>Le locataire</td>
+                <td>1976</td>
+
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Rosemary Woodhouse</td>
+                <td>Rosemary's Baby</td>
+                <td>1968</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Paulina Escobar</td>
+                <td>Death and the Maiden</td>
+                <td>1994</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>David Kentley</td>
+                <td>Rope</td>
+                <td>1948</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Margot Wendice</td>
+                <td>Dial M for Murder</td>
+                <td>1954</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!--primjer tabele kada ne moze cijela stati u vidnon polje i ispod nje se pojavi scroll lijevo desno  za ostatak sadrzaja bez ove class ce biti hidden ili odsjeceno-->
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Heading</th>
+                <th>Heading</th>
+                <th>Heading</th>
+                <th>Heading</th>
+                <th>Heading</th>
+                <th>Heading</th>
+                <th>Heading</th>
+                <th>Heading</th>
+                <th>Heading</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cell 1 content</td>
+                <td>Cell 2 content</td>
+                <td>Cell 3 content</td>
+                <td>Cell 4 content</td>
+                <td>Cell 5 content</td>
+                <td>Cell 6 content</td>
+                <td>Cell 7 content</td>
+                <td>Cell 8 content</td>
+                <td>Cell 9 content</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <script src="../01-Kreiranje-layouta-koriscenjem-bootstrap-a/Bootstrap_intro/js/jquery-3.6.3.slim.min.js"></script>
+    <script src="../01-Kreiranje-layouta-koriscenjem-bootstrap-a/Bootstrap_intro/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

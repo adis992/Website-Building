@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #my-div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #div2 {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #div3 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://link-group.eu" id="the-link">Link Group</a>
+    <!--automatska obrada linka od strane browsera tj klikom ga otvori -->
+    <script>
+        var link = document.getElementById('the-link');
+        link.onclick = function (e) {  //definicija pretplate na dogadjaj
+            e.preventDefault(); //onemogucava da se link otvori...najcesce se koristi u formama ukoliko podaci nisu validni da se ne bi poslali na server ova funkcija onemogucava da se forma posalje na server
+        }
+
+    </script>
+
+
+    <div id="div1">
+        <div id="div2">
+            <div id="div3">
+            </div>
+        </div>
+    </div>
+    <script>
+        var div1 = document.getElementById('div1');
+        var div2 = document.getElementById('div2');
+        var div3 = document.getElementById('div3');
+
+        div1.addEventListener('click', eventHandler, true);
+        div2.addEventListener('click', eventHandler, true);
+        div3.addEventListener('click', eventHandler, true);
+
+        function eventHandler(e) {   //e je objekat koji sadrzi informacije o dogadjaju a eventHandler je funkcija koja se izvrsava kada se dogadja event
+            console.log("Hello from " + this.id);  //this je element na koji se pretplacujemo
+            e.stopPropagation(); //onemogucava da se dogadjaj izvrsava na elementima koji su ispod trenutnog elementa
+
+        }
+        //imamo 2 faze dogadjaja a to su faza bubljanja i faza spustanja na engleskom se to zove bubbling and capturing
+        //faza bubljanja je kada se dogadjaj izvrsava od najviseg elementa ka najnizem elementu
+        //faza spustanja je kada se dogadjaj izvrsava od najnizijeg elementa ka najvisem elementu
+        //faza spustanja se koristi kada se imaju 2 elementa koji se preklapaju i kada se klikne na jedan od njih da se izvrsi dogadjaj na oba elementa
+
+
+    </script>
+</body>
+
+</html>

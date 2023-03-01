@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM EVENTS- kreiranje dogadjaja</title>
+</head>
+
+<body>
+    <!--
+        <button onclick="alert('You clicked me!')">Click me!</button>  //ne korisitti ovakav nacin nikada
+        -->
+    <button id="my-button">Click me!</button>
+    <script>
+        var button = document.getElementById('my-button');
+        button.onclick = function () {
+            alert('You clicked me!');   //kada se klikne na dugme izvrsava se funkcija tj logika
+        }
+    </script>
+
+    <!--slican nacin ispisa moze biti i ovako sa displayMessage-->
+    <button id="my-button-2">Click me!</button>
+    <script>
+        var button = document.getElementById('my-button-2');
+        button.onclick = displayMessage;
+        button.onclick = displayAnotherMessage; //kada se klikne na dugme izvrsava se ova funkcija jer svojstvo onClick ima samo jednu vrednost i to je uvijek zadnja vrednost koja se dodeli
+
+        function displayMessage() {
+            alert('You clicked me!');
+        }
+
+        function displayAnotherMessage() {
+            alert('Hello Again!');
+        }
+    </script>
+
+
+
+    <!--najbolji pristup je koriscenjem eventlistner-a -->
+    <button id="my-button-3">Click me!</button>
+    <script>
+        var button = document.getElementById('my-button-3');
+        button.addEventListener('click', displayMessage); //prvi parametar je event koji se dogadja u prevodu naziv eventa, drugi parametar je funkcija koja se izvrsava kada se dogadja event
+        button.addEventListener('click', displayAnotherMessage);
+
+        function displayMessage() {
+            alert('You clicked me!');
+        }
+
+        function displayAnotherMessage() {
+            alert('Hello Again!');
+        }
+
+
+    </script>
+
+    <!--uklanjanje nekog eventa-pretplate na neki dogadjaj ili listener-a -->
+    <button id="my-button-4">Click me!</button>
+    <script>
+        var button = document.getElementById('my-button-4');
+        button.addEventListener('click', displayMessage);
+        button.addEventListener('click', displayAnotherMessage);
+        
+
+        function displayMessage() {
+            alert('You clicked me!');
+            button.removeEventListener('click', displayMessage); //uklanja event listener ako ga obrisemo iz koda nece se obrisati ali ce nakon prvog klika obrisati event listener i nece se vise izvrsavati
+            //ispisivat ce nakon prvog puta samo Hello Again
+        }
+
+        function displayAnotherMessage() {
+            alert('Hello Again!');
+        }
+    </script>
+
+</body>
+
+</html>

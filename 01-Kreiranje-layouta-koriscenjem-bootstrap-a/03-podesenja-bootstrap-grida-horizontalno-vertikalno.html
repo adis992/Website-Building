@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Grid 2 </title>
+    <link rel="stylesheet" href="Bootstrap_intro/css/bootstrap.min.css">
+    <style>
+        .col-2 {
+            background-color: red;
+            border: 1px dotted black;
+            /*isprekidan okvir tackasto*/
+        }
+
+        .row {
+            background-color: green;
+            border: 1px solid black;
+            /*okvir*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--na primjer ispod smo zauzeli 9/12 i sad unutar toga horizontalno mozemo pomijerazi sadrzaj tima class="row justify-content-start" sadrzaj ce one 3 razlike hodati  lijevo ili desno
+        start je lijevo end je desno tj na kraj kolone....center-u centar sadrzaj  around isti razmak izmedju kolona, i imamo jos betwen prva i poslijedna po lijevoj i desnoj a sredina
+        ide jednak razmak izmedju prve i zadnje u koloni  -->
+        <!--za poravnanje po visini koristimo height kao visinu npr 100vh 100% vrijednost vidnog polja, a mozemo isto i na jos laksi nacin samo postavimo
+        novu klasu na row-red  class="row vh-100" i sadrzaj ce isto biti a kada bi na to dodali alig-item-start velicina ostaje ista ali sadrzaj ce se vratiti na gornji lijevi dio
+        cijelog containera, end-poravnaj po dnu reda, isto za centar, a ako hocemo kompletan dostupan prostor koristimo strech-razvuci -->
+        <!--vazno je jos napomenuti da svaku kolonu mozemo pojedinacno definisati npr col-3 align-self-start na prvoj koloni kada dodamo -->
+        <!--bootstrap klase isto moze redati kolone po order-1 s tim da imamo na umu da one po defaultu imaju vrijednost 0 tako da znaci moramo krenuti od 0 pa dalje 
+        isto mozemo korisiti i za razlicite display-e razlicit raspored npr order-md-1 kada je medium velicina ides na mjesto 1 tj drugo u ovom primjeru -->
+        <div class="row">
+            <div class="col-4"></div>
+            1st in html
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            2st in html
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            3st in html
+        </div>
+
+    </div>
+
+        <!--rasporedjivanje klasa koriscenjem offset i pormjerit ce 1 kolonu referento od postojece, ako bih stavili offset-2 na drugu pomjerit ce drugu od prve za duplu razliku kao
+         na prvoj a isto i na 3 njih ce pomjeriti za 3 referentne kolone isto se radi o ukupnom zbiru 12 grid sistema bootstrapa-->
+    <div class="container">
+        <div class="row">
+            <!--kada bih stavili offset-xl-1 offset md-2 tj na najvecim uredjajima ce prva kolona biti pomjerena za 1/12 u desno -->
+            <div class="col-2 offset-1">
+                col-2
+            </div>
+            <!--kada bih postavili col-2 offset-xl-2 offset-md-1 ova kolona ce biti pomjerena za 2 ref. kolone u desno  
+            cim se vidno polje smanji prva kolona ce biti pomjerena za 2 referentne crijednosti u desno
+            a kada se smanji ispod medium ispod 762px tada vise ne vaze ove vrijednosti jer je small display -->
+            <div class="col-2 offset-2">
+                col-2
+            </div>
+            <!--kada bih postavili col-2 offset-xl-3 offset-md-2 ova kolona ce biti pomjerena za 3 ref. kolone u desno, i po defaultu i ako ne napisemo ce biti tako-->
+            <div class="col-2 offset-3">
+                col-2
+            </div>
+        </div>
+    </div>
+
+
+        <!-- kada bih definisali klasu sa "d-none" tada ce nestati definisana kolona i to se korsiti na zaista malim displajima..sakriva kolonu iz prikaza
+        kada dodamo uz ovo i d-md-block   znaci display kada je medium prikazi kolonu ili u prevodu kada sirina udje u iz small vrijednosti gdje je skivena ona ce na medium 
+        displayu prikazati skrivenu kolonu  -->
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    1st column
+                </div>
+                <div class="col-4">
+                    2st column
+                </div>
+                <div class="col-4">
+                    3st column
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    1st column
+                </div>
+                <div class="col-4">
+                    <div class="row">       <!--kada bih stavio row unutar kolone onda ce se ona ponašati kao red i kolone ce se ponašati kao kolone i uvijek je ukupan zbir 12-->
+                        <div class="col-4">a</div>                      
+                        <div class="col-4">b</div>
+                        <div class="col-4">c</div>                       
+                    </div>
+                    <div class="row">
+                        <div class="col-4">d</div>                      
+                        <div class="col-4">e</div>
+                        <div class="col-4">f</div>    
+                    </div>
+                </div>
+            </div>
+            </div class="row">
+                <div class="col-9">
+                  2nd column  
+                </div>
+            </div>
+        </div>
+
+
+        <!--slozeni bootstrapa- gnezdenje-->
+        <script src="Bootstrap_intro/js/jquery-3.6.3.slim.min.js"></script>
+        <script src="Bootstrap_intro/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

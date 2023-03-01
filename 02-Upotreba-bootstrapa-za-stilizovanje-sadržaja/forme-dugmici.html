@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../01-Kreiranje-layouta-koriscenjem-bootstrap-a/Bootstrap_intro/css/bootstrap.min.css">
+    <title>Forme i Dugmici-Button and Forms</title>
+    <style>
+        /*  ovo je za stilizovanje forme bez bootstrapa
+        input[type="text"] input[type="email"] 
+        select,
+        textarea {
+            width: 100%;
+        }
+
+        form>div {
+            margin-bottom: 10px 0px 16px 0px;
+        }
+
+        form>div>label {
+            font-weight: bold;
+        }
+        #form-container{
+            width: 640px;
+            margin: 0 auto;
+        }
+
+        */
+
+
+
+        #form-container {
+            align-items: center;
+            width: 640px;
+            margin: 0 auto;
+        }
+
+        #batoni {
+            width: 640px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!--stilizovanje butona bootstrapom-->
+    <div id="batoni">
+        <button type="button" class="btn btn-primary">Click me!</button> <!--btn je klasa koja se koristi za stilizovanje dugmica i kada je samo btn biti ce providno
+    pored ove klase postoje i druge klase za stilizaciju btn-primary,  a evo i ostalih btn klasa-->
+
+        <button type="button" class="btn btn-primary">Primary</button>
+        <!--btn-primary je klasa koja se koristi za stilizovanje dugmica i kada je samo btn biti ce providno -->
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <!--btn-secondary je klasa koja se koristi za stilizovanje dugmica i mijenja boju btn u sivu  -->
+        <button type="button" class="btn btn-success">Success</button>
+        <!--btn-success je klasa koja se koristi za stilizovanje dugmica i mijenja boju btn u zelenu  -->
+        <button type="button" class="btn btn-danger">Danger</button>
+        <!--btn-danger je klasa koja se koristi za stilizovanje dugmica i mijenja boju btn u crvenu  -->
+        <button type="button" class="btn btn-warning">Warning</button>
+        <!--btn-warning je klasa koja se koristi za stilizovanje dugmica i mijenja boju btn u zutu  -->
+        <button type="button" class="btn btn-info">Info</button>
+        <!--btn-info je klasa koja se koristi za stilizovanje dugmica i mijenja boju btn u plavu  -->
+        <button type="button" class="btn btn-light">Light</button>
+        <!--btn-light je klasa koja se koristi za stilizovanje dugmica i mijenja boju btn u svijetlu boju i samo ostane txt  -->
+        <button type="button" class="btn btn-dark">Dark</button>
+        <!--btn-dark je klasa koja se koristi za stilizovanje dugmica i mijenja boju btn u tamnu boju  -->
+        <button type="button" class="btn btn-link">Link</button>
+        <!--btn-link je klasa koja se koristi za stilizovanje dugmica i mijenja boju btn u plavu bet bordera i bckg color  -->
+
+
+        <button type="button" class="btn btn-outline-primary">Primary</button>
+        <!--btn-outline-primary je klasa koja se koristi za stilizovanje dugmica i mijenja boju button u bijelu ali ivice idu u plavu -->
+        <button type="button" class="btn btn-outline-secondary">Secondary</button>
+        <!--btn-outline-secondary je klasa koja se koristi za stilizovanje dugmica i mijenja boju button u bijelu ali ivice idu u sivu -->
+        <button type="button" class="btn btn-outline-success">Success</button>
+        <!--btn-outline-success je klasa koja se koristi za stilizovanje dugmica i mijenja boju button u bijelu ali ivice idu u zelenu -->
+        <button type="button" class="btn btn-outline-danger">Danger</button>
+        <!--btn-outline-danger je klasa koja se koristi za stilizovanje dugmica i mijenja boju button u bijelu ali ivice idu u crvenu -->
+        <button type="button" class="btn btn-outline-warning">Warning</button>
+        <!--btn-outline-warning je klasa koja se koristi za stilizovanje dugmica i mijenja boju button u bijelu ali ivice idu u zutu -->
+        <button type="button" class="btn btn-outline-info">Info</button>
+        <!--btn-outline-info je klasa koja se koristi za stilizovanje dugmica i mijenja boju button u bijelu ali ivice idu u plavu -->
+        <button type="button" class="btn btn-outline-light">Light</button>
+        <!--btn-outline-light je klasa koja se koristi za stilizovanje dugmica i mijenja boju button u bijelu ali ivice idu u svijetlu boju -->
+        <button type="button" class="btn btn-outline-dark">Dark</button>
+        <!--btn-outline-dark je klasa koja se koristi za stilizovanje dugmica i mijenja boju button u bijelu ali ivice idu u tamnu boju -->
+
+
+        <!--stilizovanje forme bootstrapom velicina buttona-->
+        <button type="button" class="btn btn-primary">Default size</button>
+        <button type="button" class="btn btn-primary btn-sm">Small button size</button>
+        <!--btn-sm je klasa koja se koristi za stilizovanje dugmica i mijenja velicinu buttona na mali -->
+        <button type="button" class="btn btn-primary btn-lg">Large button size</button>
+        <!--btn-lg je klasa koja se koristi za stilizovanje dugmica i mijenja velicinu buttona na veliki -->
+
+
+        <!--stilizovanje onemogucenih dugmica-->
+        <button type="button" class="btn btn-primary">Default button</button>
+        <button type="button" class="btn btn-primary" disabled>Disabled button</button>
+        <!--disabled je atribut koji se koristi za onemogucavanje dugmica, svijetlija boja tj. onemoguceno -->
+
+
+        <!--stilizovanje link elementa-->
+        <a href="#">Primary Link</a>
+        <!--link je klasa koja se koristi za stilizovanje dugmica i kada je samo link biti ce providno-->
+        <a href="#" class="btn btn-primary">Link</a>
+        <!--btn je klasa koja se koristi za stilizovanje dugmica i kada je samo btn biti ce providnoi na ovaj nacin dobit cemo element koji izgleda kao dugme-->
+        <a href="#" class="btn btn-primary disabled " tabindex="-1" role="button" aria-disabled="true">Primary disabled
+            Link</a>
+        <!--disabled je atribut koji se koristi za onemogucavanje dugmica, svijetlija boja tj. onemoguceno
+    bootstrap simulira btn i nemoguce je na njega kliknuti......ne prima dogadjaje klik...tj postavi pointer-events: none-->
+        <a href="#" class="btn btn-primary btn-block">Link</a>
+        <!--btn-block je klasa koja se koristi za stilizovanje dugmica i mijenja velicinu buttona u sirinu do krajeva vidnog polja-->
+
+    </div>
+
+
+    <!--stilizovanje FORMI-->
+
+
+    <!--
+    <div id="div-container-primjer">
+        <form>
+            <div>
+                <label>Gender:</label>
+                <div>
+                    <input name="gender" type="radio" id="male" value="male" checked="checked">
+                    <label for="male">Mr</label>
+
+                </div>
+                <div>
+                    <input name="gender" type="radio" id="female" value="female">
+                    <label for="female">Mrs</label>
+                </div>
+            </div>
+
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div>
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div>
+                <label for="address">Address: </label>
+                <input type="text" id="address" name="address">
+            </div>
+
+            <div>
+                <label for="country">Country: </label>
+                <select name="country" id="country">
+                    <option value="Serbia">Serbia</option>
+                    <option value="Romania" selected="selected">Romania</option>
+                    <option value="Ukraine">Ukraine</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="comment">Comment: </label>
+                <textarea name="comment" id="comment">Lorem ipsum dolor sit amet.</textarea>
+            </div>
+
+            <div>
+                <input type="checkbox" name="newsletter" value="yes" id="newsletter">
+                <label for="newsletter">I would like to receive newsletter.</label>
+            </div>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+-->
+
+    <!--stilizovanje input i checkbox elementa se stilizuje sa bootstrapom sa sljedecim opcijama form-check-input -->
+    <!--stilizovanje FORMI bootstrapom...stilizuju se koriscenjem form-control...a elemnti koje je potrebno grupisati obiljezavaju se klasom form-group-->
+    <!--containter se ne kreira unutar formi-->
+    <div id="form-container">
+        <form>
+            <div class="form-row">
+                <div class="col-lg-2 col-sm-4 "> <!--prva kolona-->
+                    <div class="form-group">
+                        <label>Gender:</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <!--grupisanje label i input elemenata obiljezavaju se ovom klasom ako zelim u liniji da budu a ne jedan ispod dr. onda ide form check form-check-inline -->
+                                <input class="form-check-input" name="gender" type="radio" id="male" value="male"
+                                    checked="checked">
+                                <!--form-check-input je klasa koja se koristi za stilizovanje input elem. -->
+                                <label class="form-check-label" for="male">Mr</label>
+                                <!--form-check-label je klasa koja se koristi za stilizovanje label elem. -->
+
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="gender" type="radio" id="female" value="female">
+                                <label class="form-check-label" for="female">Mrs</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-8"> <!--druga kolona-->
+
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+                        <input class="form-control" type="text" id="name" name="name">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-12"> <!--treca kolona-->
+                    <div class="form-group">
+                        <label for="email">Email: </label>
+                        <input class="form-control" type="email" id="email" name="email">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address: </label>
+                <input class="form-control" type="text" id="address" name="address">
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country: </label>
+                <select class="form-control" name="country" id="country">
+                    <option value="Serbia">Serbia</option>
+                    <option value="Romania" selected="selected">Romania</option>
+                    <option value="Ukraine">Ukraine</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comment">Comment: </label>
+                <textarea class="form-control" name="comment" id="comment">Lorem ipsum dolor sit amet.</textarea>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="newsletter" value="yes" id="newsletter">
+                <label class="form-check-label" for="newsletter">I would like to receive newsletter.</label>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send</button>
+        </form>
+    </div>
+
+
+
+
+    <script src="../01-Kreiranje-layouta-koriscenjem-bootstrap-a/Bootstrap_intro/js/jquery-3.6.3.slim.min.js"></script>
+    <script src="../01-Kreiranje-layouta-koriscenjem-bootstrap-a/Bootstrap_intro/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

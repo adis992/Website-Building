@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dodatni-style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Test-01-Asigment-1-Layout-Boot</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-default"> <!-- navbar je klasa koja omogucava da se napravi navbar -->
+            <div class="container-fluid" id="navbarAll">
+                <!-- container-fluid je klasa koja omogucava da se navbar prilagodi velicini ekrana -->
+                <div class="navbar-header ">
+                    <!-- navbar-header je klasa koja omogucava da se napravi navbar zaglavlje -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">My Website</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <!-- collapse navbar-collapse je klasa koja omogucava da se napravi navbar meni -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- nav navbar-nav navbar-right je klasa koja omogucava da sadrzaj navbar prebacimo u desni kraj -->
+                        <li class="active"><a href="#">Početna</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Staff</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Download</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <header> <!--zaglavlje-->
+        <div class="container-fluid" id="homepage-picture">
+            <div class="header">
+                <img class="img-fluid" src="imgs/hero.jpg" alt=""
+                    style="object-fit: cover; width: 100%; min-height: 250px; max-height: 450px;  ">
+                <p class="p">We strive to make all of our creations exquisite.</p>
+            </div>
+        </div>
+    </header>
+
+    <!--sekcija 1 o nama usluge, projekti, -->
+    <section id="section1">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-sm-12 col-md-12 col-lg-3">
+                    <img class="img-fluid  " src="imgs/icon-1.png" alt="">
+                    <h3>O Nama</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut magna eget risus pretium
+                        ultricies. In ac varius velit. Quisque eleifend iaculis diam, non maximus nisl. Donec blandit a
+                        odio
+                        eu
+                        consectetur. Ut malesuada lacus quis elit laoreet, non gravida ante sagittis.</p>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-3">
+                    <img class="img-fluid" src="imgs/icon-2.png" alt="">
+                    <h3>Usluge</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut magna eget risus pretium
+                        ultricies. In ac varius velit. Quisque eleifend iaculis diam, non maximus nisl. Donec blandit a
+                        odio
+                        eu
+                        consectetur.</p>
+                </div>
+                <div class="col-sm-12  col-md-12 col-lg-3 ">
+                    <img class="img-fluid" src="imgs/icon-3.png" alt="">
+                    <h3>Projekti</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut magna eget risus pretium
+                        ultricies. In ac varius velit. Quisque eleifend iaculis diam, non maximus nisl. Donec blandit a
+                        odio
+                        eu
+                        consectetur. Ut malesuada lacus quis elit laoreet, non gravida ante sagittis.</p>
+                </div>
+                <div class="col-sm-12 col-md-12  col-lg-3">
+                    <img class="img-fluid" src="imgs/icon-4.png" alt="">
+                    <h3>Projekti</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut magna eget risus pretium
+                        ultricies. In ac varius velit. Quisque eleifend iaculis diam, non maximus nisl. Donec blandit a
+                        odio
+                        eu
+                        consectetur. Ut malesuada lacus quis elit laoreet, non gravida ante sagittis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--1row  4 kolone 1 row 3kolone-->
+    <section id="section2">
+        <div class="container-fluid">
+            <h3>Recent Work</h3>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <img class="img-fluid" src="imgs/bike-400x340.jpg" alt="">
+                    <p>Ipsum dolor sit amet, consectetur adipiscing elit. Sed et tellus aliquet, fermentum quam vel,
+                        tincidunt
+                        lorem.</p>
+                </div>
+                <div class="ccol-sm-12 col-md-6 col-lg-3">
+                    <img class="img-fluid" src="imgs/surf-400x340.jpg" alt="">
+                    <p>Ipsum dolor sit amet, consectetur adipiscing elit. Sed et tellus aliquet, fermentum quam vel,
+                        tincidunt
+                        lorem.</p>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <img class="img-fluid" src="imgs/hills-400x340.jpg" alt="">
+                    <p>Ipsum dolor sit amet, consectetur adipiscing elit. Sed et tellus aliquet, fermentum quam vel,
+                        tincidunt
+                        lorem.</p>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <img class="img-fluid" src="imgs/path-400x340.jpg" alt="">
+                    <p>Ipsum dolor sit amet, consectetur adipiscing elit. Sed et tellus aliquet, fermentum quam vel,
+                        tincidunt
+                        lorem.</p>
+                </div>
+            </div>
+
+            <h3>From the Blog</h3>
+            <hr>
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-4">
+                    <img class="img-fluid" src="imgs/cow-640x340.jpg" alt="">
+                    <p>Ipsum dolor sit amet, consectetur adipiscing elit. Sed et tellus aliquet, fermentum quam vel,
+                        tincidunt
+                        lorem.</p>
+                </div>
+                <div class="col-12 col-md-12  col-lg-4">
+                    <img class="img-fluid" src="imgs/sunrise-640x340.jpg" alt="">
+                    <p>Ipsum dolor sit amet, consectetur adipiscing elit. Sed et tellus aliquet, fermentum quam vel,
+                        tincidunt
+                        lorem.</p>
+                </div>
+                <div class="col-12 col-md-12  col-lg-4">
+                    <img class="img-fluid" src="imgs/grass-640x340.jpg" alt="">
+                    <p>Ipsum dolor sit amet, consectetur adipiscing elit. Sed et tellus aliquet, fermentum quam vel,
+                        tincidunt
+                        lorem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--dno stranice-->
+    <div class="container-fluid">
+        <div class="row" id="footer-div">
+            <div class="col-md-12 col-lg-4 ">
+                <h4>My Website</h4>
+                <p>Address: <br> City, State ZIP</p>
+                <p>Phone: 123-456-7890</p>
+                <p>Email: info@mywebsite.com</p>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <h4>Recent Posts</h4>
+                <ul>
+                    <li><a href="">Post 1</a></li>
+                    <li><a href="">Post 2</a></li>
+                    <li><a href="">Post 3</a></li>
+                    <li><a href="">Post 4</a></li>
+                    <li><a href="">Post 5</a></li>
+                </ul>
+            </div>
+            <div class="col-md-12 col-lg-4 ">
+                <h4>Recent Work</h4>
+                <ul>
+                    <li><a href="">Project 1</a></li>
+                    <li><a href="#">Project 2</a></li>
+                    <li><a href="#">Project 3</a></li>
+                    <li><a href="#">Project 4</a></li>
+                    <li><a href="#">Project 5</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="copyright">
+            <div class="col-md-12 ">
+                <p>&copy; 2020 itAcademy</p>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--veoma bitna linija za responsive desing-->
+    <title>osnovne kontrole grida</title>
+    <link rel="stylesheet" href="Bootstrap_intro/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!--semanticki elementi to sam radio u pocetku/ article, selecion i sl-->
+    <!--bootstrab grid moze imati MAXIMALNO 12 KOLONA-->
+    <!--sirine kolona se mogu isto razlikovati po sirini displaya pa postoji vise vrsta, small medium small i large i extra large(sm ld xl...)-->
+
+    <!--
+    <div class="container">
+        <div class="row">
+            <div class="col-2">    <!--ova kolona ce od kupnog zbira uzimati 2 dijela od 12 kolona u prevodu 2/12, bez ovoga on sam automatski podijeli koliko kolna i svima isto-MAX BROJ KOLONA B. GRIDA JE 12 ->
+                row 1, column 1
+            </div>
+            <div class="col-5">     <!--ova kolona ce od kupnog zbira uzimati 5-nu dijela od 12 kolona u prevodu 5/12 ->
+                row 1, column 2
+            </div>
+            <div class="col-5">
+                row 1, column 3
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                row 2, column 1
+            </div>
+            <div class="col-4">
+                row 2, column 2
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                row 3, column 1
+            </div>
+            <div class="col-4">
+                row 3, column 2
+            </div>
+            <div class="col-4">
+                row 3, column 3
+            </div>
+            <div class="col-2">
+                row 3, column 4
+            </div>
+        </div>
+
+    -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">     <!--veca sirina od 992px kod large uredjaja odnosno display-a i kad idem ispod ove dimenzije,
+                 on ce prebaciti red pod red, a ukoliko je uredjaj nema large osobine tj small medium ili extrea small, 3 kolone postaje sve 1 kolona  --> 
+                row 1, column 1
+            </div>
+            <div class="col-lg-5">     
+                row 1, column 2
+            </div>
+            <div class="col-lg-5">
+                row 1, column 3
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">     <!--col-12 na najmanjim display ide sve u 1 colonu, col-md medium display ce uzimati po polovinu reda a na large cetvrtinu reda  --> 
+                row 1, column 1
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">     
+                row 1, column 2
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                row 1, column 3
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <script src="Bootstrap_intro/js/jquery-3.6.3.slim.min.js"></script>
+    <script src="Bootstrap_intro/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

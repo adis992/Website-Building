@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser object Model</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        window.alert("Hello World!")  // modalni prozor iznad dokumenta, radili smo bez windows tako da je po defaultu sam browser ucitao window..on uvijek postoji u prevodu
+
+
+        var myVariable = "Hello World!";
+        console.log(window.myVariable);    //isti primjer
+
+        function sayHello() {                //isti primjer
+            console.log("Hello World!");
+        }
+        */
+
+
+        let screenWidth = screen.width;    //screen je objekat, width je svojstvo sirine ekrana
+        let screenHeight = screen.height;  //height je svojstvo visine ekrana
+        let availableWidth = screen.availWidth; //availWidth je svojstvo dostupne sirine ekrana
+        let availableHeight = screen.availHeight;  //availHeight je svojstvo dostupne visine ekrana
+        let colorDepth = screen.colorDepth;   //colorDepth je svojstvo boje ekrana 16bitni 24bitni 32bitni itd
+
+        console.log("Screen width: " + screenWidth + "\n" +
+            "Screen height: " + screenHeight + "\n" +
+            "Available screen width: " + availableWidth + "\n" +
+            "Available screen height: " + availableHeight + "\n" +
+            "Color depth: " + colorDepth + "\n");
+
+        let href = location.href;     //location je objekat, href je svojstvo linka
+        let hostname = location.hostname;  //hostname je svojstvo hosta na kom se nalazi link
+        let pathname = location.pathname;   //pathname je svojstvo putanje na kojoj se nalazi link  
+        let protocol = location.protocol;  //protocol je svojstvo protokola na kojoj se nalazi link http https ftp itd
+
+        console.log("Href: " + href + "\n" +     //ispisuje se u konzoli
+            "Hostname: " + hostname + "\n" +   //ispisuje se u konzoli
+            "Pathname: " + pathname + "\n" +
+            "Protocol: " + protocol + "\n");
+
+        confirm("Are you sure?");  //modalni prozor sa dugmicima ok i cancel
+        alert("Hello World!");  //modalni prozor sa dugmicem ok
+
+        var userConfirmation = confirm("Are you sure?");  //modalni prozor sa dugmicima ok i cancel
+        if (userConfirmation) {
+            alert("Hello World!");  //modalni prozor sa dugmicem ok
+        } else {      //ako je korisnik odbio ili cancel kliknuo onda se izvrsava else
+            alert("Goodbye World!");  //modalni prozor sa dugmicem ok
+        }
+
+
+
+        //preuzimanje vrijednosti od korisnika
+
+        window.prompt ("Unesite ime: ", "Ime");  //modalni prozor sa dugmicima ok i cancel i poljem za unos teksta
+        //ovo  ce se prikazati na sljedeci nacin
+
+
+        var userName = window.prompt ("Unesite ime: ", "Ime");  //modalni prozor sa dugmicima ok i cancel i poljem za unos teksta
+        if (userName) {
+            alert("Hello " + userName);  //modalni prozor sa dugmicem ok
+        } else {      //ako je korisnik odbio ili cancel kliknuo onda se izvrsava else
+            alert("Goodbye World!");  //modalni prozor sa dugmicem ok
+        }
+
+
+    </script>
+
+    
+</body>
+
+</html>

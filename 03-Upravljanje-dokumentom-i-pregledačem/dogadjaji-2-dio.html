@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM EVENTS- kreiranje dogadjaja, Error u js prilikom ucitavanja</title>
+
+    <style>
+        #my-div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!--BUTTON mora imati js kod na dnu zbog citanja sadrzaja jer nece moci ucitati button ili form npr.-->
+    <!--na ovaj nacin moyemo rijesiti problem sa citanjem sadrzaja jer citanje webbrowsera ide odozgo ka dole i s lijeva na desno -->
+
+    <script>
+        window.addEventListener('load', function () {  //window je objekat koji predstavlja prozor pregledača, load je event koji se događa kada se učitava stranica, funkcija je callback funkcija koja se izvršava kada se dogodi event
+            var button = document.getElementById('my-button');
+            button.addEventListener('click', displayMessage);
+        }
+        );
+
+        function displayMessage() {
+            alert('You clicked me!');
+        }
+    </script>
+    <button id="my-button">Click me!</button>
+
+
+
+    <!-- pored load-a imamo i DOMContentLoaded   -->
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {  //DOMContentLoaded je event koji se događa kada se učitava DOM stablo, ne ucitavaju se slike, video, audio, itd.
+            var button = document.getElementById('my-button');
+            button.addEventListener('click', displayMessage);
+        }
+        );
+
+        function displayMessage() {
+            alert('You clicked me!');
+        }
+    </script>
+
+    <!-- pored load-a imamo i readystatechange   -->
+
+    <script>
+        window.addEventListener('readystatechange', function () {  //readystatechange je event koji se događa kada se učitava DOM stablo, ne ucitavaju se slike, video, audio, itd.
+            if (document.readyState === 'interactive') {   //ako yelimo cekati sve resurse samo ispravimo stanje na complete....document.readyState je svojstvo koje nam govori u kojem smo stanju, interactive je stanje kada je DOM stablo učitano ali još nisu učitani slike, video, audio, itd.
+                var button = document.getElementById('my-button');
+                button.addEventListener('click', displayMessage);
+            }
+        });
+
+        function displayMessage() {
+            alert('You clicked me!');
+        }
+    </script>
+
+
+    <!-- DOGADJAJI MISA/EVENTS MOUSE  -->
+    <div id="my-div">Hello!I am div. You can click me!</div>
+    <script>
+        var div = document.getElementById('my-div');
+        div.addEventListener('click', function () {
+            alert('You clicked me!');
+        });
+    </script>
+
+    <!-- DOGADJAJI MISA/ MOUSEENTER -->
+    <div id="my-div">Hello!I am div. You can click me!</div>
+    <script>
+        var div = document.getElementById('my-div');
+        div.addEventListener('mouseenter', function () {  //mouseenter je event koji se događa kada se miš nalazi unutar elementa i kada se miš pomakne izvan elementa i text se promijeni
+            div.innerHTML = 'You entered me!';
+        });
+        div.addEventListener('mouseleave', function () {  //mouseleave je event koji se događa kada se miš nalazi unutar elementa i kada se miš pomakne izvan elementa i text se promijeni
+            div.innerHTML = 'You left me!';
+        });
+    </script>
+
+    <!-- DOGADJAJI MISA/ MOUSEMOVE -->
+    <div id="my-div">Hello!I am div. You can click me!</div>
+    <script>
+        var div = document.getElementById('my-div');
+        let eventCounter = 0;
+        div.addEventListener('mousemove', function () {  //mousemove je event koji se događa kada se miš nalazi unutar elementa i kada se miš pomakne izvan elementa i text se promijeni i area zbraja koliko puta se dogodio event
+            div.innerHTML = 'You moved me!' + eventCounter;
+            eventCounter++;
+        });
+    </script>
+
+    <!-- DOGADJAJI TASTATURE/ keydown-->
+    <div id="my-div">Hello!I am div. You can click me!</div>
+    <script>
+        document.addEventListener('keydown', function (event) {  //keydown je event koji se događa kada se pritisne tipka na tastaturi i moye priohvatati 1 parametar koji je event
+            console.log(event);  //event je objekat koji predstavlja događaj koji se dogodio, event objekat ima svojstva i metode koje nam govore o događaju koji se dogodio
+            console.log(event.key);  //event.key je svojstvo koje nam govori koji je tipak pritisnut na tastaturi
+        });
+    </script>
+
+    <!-- DOGADJAJI TASTATURE/ target svojstvo-->
+    <div id="my-div">Hello!I am div. You can click me!</div>
+    <script>
+        document.addEventListener('click', function (e) {
+            console.log(e.target);  //e.target je svojstvo koje nam govori koji je element na koji je kliknuto ispis u konzoli
+        });
+    </script>
+
+
+    <!--svojstvo target dr. primjer klikom na item ispisi koji je tag itema npr na klik 1 u modalu ce biti idem 1-->
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+
+    </ul>
+
+
+    <script>
+        var items = document.getElementsByTagName('li');
+        for (var i = 0; i < items.length; i++) {   //petlja koja prolazi kroz sve elemente i dodaje im event listener koji se događa kada se klikne na element
+            items[i].addEventListener('click', function (e) {  //e je event(objekat dogadaja) koji se dogodio i ima svojstva i metode koje nam govore o događaju koji se dogodio
+                alert(e.target.innerHTML);  //e.target je svojstvo koje nam govori koji je element na koji je kliknuto ispis u konzoli
+            });
+        }
+    </script>
+</body>
+
+</html>

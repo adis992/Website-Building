@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>selektori, dogadjaji, stilizacija jquerry</title>
+</head>
+
+<body>
+
+    <h1 id="heading-1">This is heading 1</h1>
+
+    <script src="js/jquery-3.6.3.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!--
+    <script>    
+    osnovni selektori
+    $("name") //selektuje sve elemente sa tim imenom
+    jQuerry("name") //selektuje sve elemente sa tim imenom
+    *
+    let heading = $("#heading-1"); //selektuje element sa id-om heading-1
+    console.log(heading.text()); //ispisuje tekst elementa
+    */
+    </script>
+    -->
+
+
+
+
+    <!--primjer2
+    <h1 id="heading-1">This is heading 2</h1>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <script>
+        let heading = $("p");  //selektuje sve elemente p
+        console.log(heading.length);  //ispisuje tekst elementa
+    </script>
+    -->
+
+    <!--primjer3 pprisustvom klase
+    <p class="my-class my-other-class">Paragraph 1</p>
+    <p class="my-class">Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <script>
+        let heading = $(".my-class");  //selektuje sve elemente p sa klasom my-class, mogu se koristiti svi css selektori  a to su: #id, .class, tag name itd isto i psedo klase
+        console.log(heading.length);  //ispisuje tekst elementa
+    </script>
+    -->
+
+    <!--primjer4 pretragom DOM stabla   -->
+        
+        <section id="section1">
+            <h1 id="heading1"> This is heading 1</h1>
+            <p class="my-class">Paragraph 1</p>
+            <p class="my-class">Paragraph 2</p>
+            <p>Paragraph 3</p>
+            <ul id="my-list">
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </section>
+        <script>
+            /*
+            let heading = $("li:first-child").parent;   //parent() vraca roditelja elementa, pored parent posjeduje i parents() koji vraca sve roditelje elementa i section i body itd
+            console.log(heading.text());  //ispisuje tekst elementa
+            */
+            let elements = jQuery("li:first-child").parents("");  //vraca sve roditelje elementa 
+            elements.each (function() {     //each() je funkcija koja prolazi kroz sve elemente i za svaki element izvrsava funkciju koja je unutar nje
+                console.log($(this).text()).prop('nodeName'); //ispisuje tekst elementa a this je element koji se trenutno obradjuje, prop je funkcija koja vraca ime elementa a nodeName je ime elementa
+            });
+            //imam jos metodu parentrUntil() koja vraca sve roditelje elementa do odredjenog elementa, i metodu children() koja vraca sve djecu elementa
+        </script>
+       
+       <!--pored ovih imamo isto i srodne elemente sa metodom siblings 
+        u koliko je potrebno selektovati prvi naredni srodni element koristimo metodu next
+        a sve naredne elemente s opcijom all 
+        //prev i prevAll su isto kao next i nextAll samo za prethodne elemente a prevUntil i nextUntil su isto kao parentUntil samo za prethodne i naredne elemente
+        -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>jquerry biblioteka</title>
+    <style>
+        input[type=text],
+        input[type=email],
+        select,
+        textarea {
+            width: 100%;
+        }
+
+        form>div {
+            margin: 16px 0 16px 0px;
+        }
+
+        form>div>label {
+            font-weight: bold;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="subscribe-form">
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <div>
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <button type="submit">Subscribe</button>
+    </form>
+
+
+
+    <script src="js/jquery-3.6.3.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        /*  let subscribeForm = document.getElementById('subscribe-form');  //dohvati formu
+          subscribeForm.addEventListener('submit', function (e) {  //dodaj event listener na submit
+              e.preventDefault();  //spriječi defaultno ponašanje
+              let nameInput = document.getElementById('name');  //dohvati inpute
+              let emailInput = document.getElementById('email');  //dohvati inpute
+              alert("Name: " + nameInput.value + " \n" Email: " + emailInput.value");     //ispisi alert
+          });
+          
+          isti primjer imamo ispod s jquerriom a inad je cist js */
+
+        $('#subscribe-form').submit(function (e) {  //dodaj event listener na submit sa $ znakom selektiramo elemente iz html-a 
+            e.preventDefault();  //spriječi defaultno ponašanje 
+            let nameInput = $('#name');  //dohvati inpute 
+            let emailInput = $('#email');   //dohvati inpute
+            alert("Name:" + $("#name").val() + "\n" + "Email:" + $("#email").val());  //ispisi alert 
+
+        });
+
+        //selektori u jquery-u su sa znakom $ i oni su slicni css selektorima ili sa jQuery selektorima
+        /*U prikazanom primeru, definisana su još dva jQuery selektora:
+
+        $("#name") isto je što i getElementById("name")
+        $("#email") isto je što i getElementById("email")
+        */
+
+    </script>
+</body>
+
+</html>

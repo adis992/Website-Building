@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Rukovanje sadržajem, strukturom i stilizacijom pomoću jQuery biblioteke</title>
+</head>
+
+<body>
+
+    <button id="my-button">Click me</button>
+
+    <script src="js/jquery-3.6.3.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        $("#my-button").click(function () {
+            alert("The element was clicked.");
+        });
+
+        /*
+        izvorni js kod je
+        let myButton = document.getElementById("my-button");
+        myButton.addEventListener("click", function () {
+            alert("The element was clicked.");
+        });
+        */
+       /*jquerry .ready metoda
+       ona se koristi da bi se izvrsila neka funkcija kada se ucita cela stranica odnosno DOM stablo
+       
+         $(document).ready(function () {
+              alert("The document is ready.");
+         });
+
+         */
+
+            /*jquerry .on metoda 
+            ona se koristi da bi se izvrsila neka funkcija kada se dogodi neki dogadjaj, prihvata 2 parametra a to su: dogadjaj i funkcija
+            dogadjaj je string koji predstavlja naziv dogadjaja koji se dogodio, a funkcija je funkcija koja se izvrsava kada se dogodi dogadjaj
+            primjer koda je:
+            $("#my-button").on("click", function () {
+                alert("The element was clicked.");
+            });
+            */
+            
+            /*jquerry .off metoda
+            koristi se kao i removeEventListener, ona se koristi da bi se uklonila funkcija koja je dodata pomocu .on metode primjer
+            $("#my-button").off("click");
+            i nece se vise izvrsavati funkcija koja je dodata pomocu .on metode
+            */
+            
+    </script>
+</body>
+
+</html>

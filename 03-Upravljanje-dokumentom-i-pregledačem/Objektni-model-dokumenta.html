@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+< lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>dom- objektni model dokumenta</title>
+        <style>
+            .blue-text {
+                color: blue;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--/* selektovanje elemenata u DOM strukturi 
+    
+    <div id="div-1">
+        <p id="p-1">Text 1</p>
+        <p id="p-2">Text 2</p>
+        <p>Text 3</p>
+
+    </div>
+    /*
+    <script>
+        var paragrapf = document.getElementById("p-1"); //pristupanje elementu preko id-a
+        paragraph.innerHTML = "Novi tekst"; // dobijanje i promjena sadržaja elementa
+    </script>
+    <script>
+        document.title = "Novi naslov"; //promjena naslova-naziva dokumenta
+    </script>
+
+-->
+        <!--
+        <p id="my-class">Text 1</p>
+        <p class="my-class">Text 2</p>
+        <p class="my-class some-other-class">Text 3</p>
+        <p>Text 4</p>
+        <p>Text 5</p>
+        <p class="your-class">Text 6</p>
+
+        <script>
+            var paragraphs = document.getElementsByClassName('my-class');    //pristupanje elementima preko klase...i na ovaj nacin se selektuje veci broj elemenata 
+            for (var i = 0; i < paragraphs.length; i++) {               //dobijanje broja elemenata u nizu 
+                console.log (paragraphs[i].innerHTML );                    //dobijanje sadrzaja elemenata tj u ovom prim my clas 2 i 3 p
+            }
+                                   
+        </script>
+        -->
+
+        <!--/* selektovanje elemenata u DOM strukturi
+        <ul>
+            <li>Prvi element</li>
+            <li id="my-id">Drugi element</li>
+            <li>Treci element</li>
+            <li>Cetvrti element</li>
+            <li>Peti element</li>
+        </ul>
+
+        <script>
+            var paragraphs = document.getElementsByTagName ('li'); //pristupanje elementima preko taga
+            console.log (items.length);                           //dobijanje broja elemenata u nizu na drugi nacin od prethodnog
+
+
+            var item = document.querySelector ('#my-id'); //pristupanje elementu preko id-a sa querySelector    uvijek vraca samo prvi element koji zadovoljava kriterij odnosno my-id u ovom prim.
+            console.log (item.innerHTML);                //dobijanje sadrzaja elementa tj u ovom prim my clas id 2
+            //ukoliko je potrebno selektovati vise elemenata sa metodom querySelector koristi se klasa ili tag npr var stavimo na items jer je vise u zagradi ide li a ne id
+            //u ispisu console stavimo isto items.length  i dobijamo broj svih elemenata u nizu
+        </script>
+        -->
+        <!--
+        <p id="the-paragraph" class="my-class">Text-1</p>
+
+        <script>
+
+            /*
+            var paragraph = document.getElementById('the-paragraph');
+            console.log ("Original paragraph content was: "  + paragraph.innerHTML);     //dobijanje sadrzaja elementa tj u ovom prim my  id the-paragraph
+            paragraph.innerHTML = "Novi tekst";                                           //promjena sadrzaja elementa tj u ovom prim my  text-1
+            //da bu citali vrijednost nekog atributa moram u p dodati class i dodati mu vrijednost
+            */
+
+            var paragraph = document.getElementById('the-paragraph');
+            console.log ("Id:" + paragraph.id);    //ispis id-a tj the-paragraph 
+            console.log ("Class:" + paragraph.className);      //paragraph.className vraca samo prvu klasu tj my-class
+        </script>
+          -->
+
+
+        <!--citanje vrijednosti atributa i postavljanje npr na button a u primjeru je text
+        <input type="text" name="firstname" id="first-name" value="I want to be button!">
+
+        <script>
+            var input = document.getElementById('first-name');
+            input.setAttribute('type', 'button');      //vrijednost type atributa postavljamo na button
+        </script>
+        -->
+
+        <!--rukovanje stilizacijom na ovaj nacin samo linijski tj inline obojili text, dok mozemo napraviti stilizaciju css-om i u js paragpraph.classList.add("ime-klase")
+        i na ovaj nacin nece biti linijski nego ce dodati u postojece i  tu klasu koju smo dodali--
+        <p id="the-paragraph" class="my-class">Text 1</p>
+
+        <script>
+            var paragraph = document.getElementById('the-paragraph');     //pristupanje elementu preko id-a
+            paragraph.style.color = "blue";   //promjena boje teksta
+            //isto mozemo raditi i sa remove  paragraph.classList.remove("my-class");  //uklanjanje klase odnosno stilizacije i klase
+        </script>
+
+        -->
+
+
+
+        <!--dodavanje i brisanje elemenata postize se koristenje nekoliko metoda dom objekta-->
+        <p id="the-paragraph" class="my-class blue-text">Non dynamic paragraph. </p>
+
+        <script>
+            var newParagraph = document.createElement('p'); //kreiranje novog elementa
+            var newContent = document.createTextNode('Dynamic paragraph.'); //kreiranje novog teksta-sadrzaja paragrafa
+            newParagraph.appendChild(newContent); //dodavanje teksta u paragraf  tj sadrzaj+paragraf
+            document.body.appendChild(newParagraph); //dodavanje paragrafa u body tj sadrzaj+paragraf+body
+
+            //Pored appenchild mozemo na vise nacina dodati novi element u html strukturu npr insertBefore i insertAfter i jos neki nacini 
+            //npr ako zelimo insertBefore da dodamo novi element prije nekog drugog elementa u html strukturi
+            //var oldParagraph = document.getElementById('the-paragraph'); //pristupanje elementu preko id-ađ
+            //document.body.insertBefore(newParagraph, oldParagraph); //dodavanje paragrafa u body tj sadrzaj+paragraf+body
+
+
+
+
+        </script>
+
+
+        <!--brisanje elemenata iz html strukture-->
+        <ul id="myList">
+            <li>Prvi element</li>
+            <li>Drugi element</li>
+            <li>Treci element</li>
+            <li>Cetvrti element</li>
+            <li>Peti element</li>
+        </ul>
+        <script>
+            var list = document.getElementById('myList');
+            list.removeChild(list.children[0]); //brisanje prvog elementa iz liste
+            list.removeChild(list.children[2]); //brisanje treceg elementa iz liste
+        </script>
+
+
+        <!--replace child   zamjena elemenata  -->
+
+        <p id="the-paragraph" class="my-class">Non-dynamic paragraph.</p>
+
+        <script>
+            var newParagraph = document.createElement("p");     //kreiranje novog elementa
+            var newContent = document.createTextNode("This is dynamically generated paragraph!");        //kreiranje novog teksta-sadrzaja paragrafa
+            newParagraph.appendChild(newContent);      //dodavanje teksta u paragraf  tj sadrzaj+paragraf
+
+            var oldParagraph = document.getElementById("the-paragraph");      //pristupanje elementu preko id-a
+            document.body.replaceChild(newParagraph, oldParagraph);        //zamjena elemenata tj novi paragraf stavlja na mjesto starog
+
+        </script>
+
+
+
+    </body>
+
+    </html>
