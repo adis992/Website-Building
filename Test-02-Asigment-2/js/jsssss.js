@@ -1,5 +1,5 @@
 
-$(function () {
+$(function () {    //funkcija za validaciju input polja
     const form = $("#login-form");
     const username = $("#username");
     const password = $("#password");
@@ -7,28 +7,28 @@ $(function () {
     const successContainer = $("#success-container");
 
 
-    form.on("submit", function (event) {
+    form.on("submit", function (event) {           //funkcija za validaciju input polja
         event.preventDefault();
         let errors = [];
 
         // Provera korisničkog imena
         if (username.val().trim() === "") {
-            showError(username, "Please, enter username");
-            errors.push("Please, enter username");
+            showError(username, "Please, enter Username");
+            errors.push("Please, enter Username");
         } else if (username.val().trim() !== "new_user") {
-            showError(username, "Please, enter valid username");
-            errors.push("Please, enter valid username");
+            showError(username, "Please, enter valid Username");
+            errors.push("Please, enter valid Username");
         } else {
             showSuccess(username);
         }
 
         // Provera lozinke
         if (password.val().trim() === "") {
-            showError(password, "Please, enter password");
-            errors.push("Please, enter password");
+            showError(password, "Please, enter Password");
+            errors.push("Please, enter Password");
         } else if (password.val().trim() !== "123456789") {
-            showError(password, "Please, enter valid password");
-            errors.push("Please, enter valid password");
+            showError(password, "Please, enter valid Password");
+            errors.push("Please, enter valid Password");
         } else {
             showSuccess(password);
         }
@@ -55,7 +55,7 @@ $(function () {
 
 
 
-        function showSuccess(input) {
+        function showSuccess(input) {   //funkcija za uspesno logovanje
             input.removeClass("invalid").addClass("valid");
             input.next(".validation-icon").removeClass("error-icon").addClass("success-icon fa fa-check");
             input.nextAll(".success-message:first").show();
@@ -71,7 +71,7 @@ $(function () {
 
 
 
-        function showSuccessMessage() {
+        function showSuccessMessage() {              //funkcija za uspesno logovanje/message
             successContainer.html("<p>Successful login!</p>");
             successContainer.addClass("valid");
             successContainer.find(".validation-icon").addClass("success-icon");
@@ -80,7 +80,7 @@ $(function () {
             errorContainer.html("");
         }
 
-        function showErrorMessage(errors) {
+        function showErrorMessage(errors) {       //funkcija za neuspesno logovanje/message
             let errorList = "<ul>";
             errors.forEach(function (error) {
                 errorList += "<li>" + error + "</li>";
