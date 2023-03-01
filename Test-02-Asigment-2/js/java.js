@@ -4,10 +4,21 @@ var usernameInput = document.getElementById('username');
 var passwordInput = document.getElementById('password');
 
 // Događaj "submit"
-form.addEventListener('submit', function (e) {
+form.addEventListener('submit', function (error) {
     // Spriječavanje podrazumijevanog ponašanja forme
-    e.preventDefault();
-    
+    error.preventDefault();
+    function clearErrors() {
+        var errors = document.querySelectorAll('.error');
+        errors.forEach(function (error) {
+            error.parentNode.removeChild(error);
+        });
+        var invalidFields = document.querySelectorAll('.invalid');
+        invalidFields.forEach(function (field) {
+            field.classList.remove('invalid');
+        });
+    }
+
+
 
     // Provjera unesenih podataka
     var errors = [];
@@ -55,6 +66,8 @@ form.addEventListener('submit', function (e) {
         passwordInput.parentNode.insertBefore(icon, passwordInput.nextSibling);
         errors.push('Please enter valid password.');
     }
+    // brisanje grešaka nakon što korisnik unese ispravne podatke
+
 
     // Ako ima grešaka, ispisati ih ispod forme
     var errorsDiv = document.createElement('div');
@@ -70,6 +83,7 @@ form.addEventListener('submit', function (e) {
         return;
     }
 
+
     // Ako nema grešaka, označiti polja kao ispravna i ispisati poruku ispod forme
     usernameInput.classList.add('valid');
     passwordInput.classList.add('valid');
@@ -82,6 +96,13 @@ form.addEventListener('submit', function (e) {
     usernameInput.value = '';
     passwordInput.value = '';
 
+    // Resetovanje forme
+    clearErrors("");
+
+    var clearBtn = document.getElementById('clear-btn');
+    clearBtn.addEventListener('click', function () {
+        clearErrors();
+    });
 
     if (errors.length > 0) {
         // Ukloni sve prethodno postavljene ikone i poruke o greškama
@@ -93,19 +114,19 @@ form.addEventListener('submit', function (e) {
         errorMessages.forEach(function (msg) {
             msg.parentNode.removeChild(msg);
         });
-        
+
         usernameInput.classList.add('valid');
         passwordInput.classList.add('valid');
         var successDiv = document.createElement('div');
         successDiv.classList.add('success');
         successDiv.innerText = 'Successful login!';
         form.parentNode.insertBefore(successDiv, form.nextSibling);
-        
+
         usernameInput.value = '';
         passwordInput.value = '';
-        
+
         /*reset success  div*/
-        setTimeout(function() {
+        setTimeout(function () {
             form.parentNode.removeChild(successDiv);
         }, 3000);
     } else {
@@ -115,7 +136,7 @@ form.addEventListener('submit', function (e) {
             errorDiv.innerText = error.message;
             var icon = document.createElement('i');
             icon.classList.add('fas', 'fa-times', 'error-icon');
-            if (error.field === 'username') {
+            if (error.fixed === 'username') {
                 usernameInput.classList.add('invalid');
                 usernameInput.parentNode.insertBefore(errorDiv, usernameInput.nextSibling);
                 usernameInput.parentNode.insertBefore(icon, usernameInput.nextSibling);
