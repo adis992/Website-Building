@@ -37,19 +37,21 @@
 
         .invalid {
             border: 1px solid red;
+            content: "X";
         }
 
         .invalid:after {
-            content: "X";
+            content: "";
             color: red;
         }
 
         .valid {
             border: 1px solid green;
+            content: "✓";
         }
 
         .valid:after {
-            content: "✓";
+            content: "";
             color: green;
         }
 
@@ -67,7 +69,6 @@
 </head>
 
 <body>
-
     <div id="login-container">
 
         <form>
@@ -89,13 +90,22 @@
         <div class="errors">
             <div class="error"></div>
         </div>
-
-        
-        <script src="js/java.js"></script>
-
     </div>
+    <script>
+        var clearBtn = document.querySelector('#clear-btn');
+        var form = document.querySelector('form');
+
+        clearBtn.addEventListener('click', function () {
+            FormClear.clearFormFields(form);
+        });
+    </script>
+    <script src="js/formValidation.js"></script>
+    <script src="js/formIcons.js"></script>
+    <script src="js/formClear.js"></script>
+    <script src="js/form.js"></script>
+    
+
 
 </body>
-
 
 </html>
