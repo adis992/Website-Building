@@ -125,4 +125,7 @@ ul li:before {
   content: none;
 }
 
-
+h3 h4 {
+  font-style: bold;
+  
+}
