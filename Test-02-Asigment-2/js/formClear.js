@@ -1,6 +1,9 @@
 var formClear = function() {
-    var formElement = document.getElementById("sign-up-form");
-    formElement.reset();
-    formElement.clearFormErrors();
+    var usernameInput = document.getElementById('username');
+    var passwordInput = document.getElementById('password');
+    usernameInput.value = '';
+    passwordInput.value = '';
+    formValidation.clearFormErrors(document.querySelector('form'));
+    formIcons.removeValidityIcons();
   }
   

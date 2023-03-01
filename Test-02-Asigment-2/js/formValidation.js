@@ -37,5 +37,3 @@ var formValidation = (function () {
     clearFormErrors: clearFormErrors
   }
 })();
-
-

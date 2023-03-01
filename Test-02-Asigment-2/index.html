@@ -1,105 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
     <title>Assignment 2 - Website Building</title>
     <style>
-        body {
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
+      body {
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
 
-        #login-container {
-            width: 460px;
-            margin: 0 auto;
-        }
+      #login-container {
+        width: 460px;
+        margin: 0 auto;
+      }
 
-        form label,
-        form input {
-            width: 100%;
-            box-sizing: border-box;
-        }
+      form label,
+      form input {
+        width: 100%;
+        box-sizing: border-box;
+      }
 
-        form input {
-            padding: 8px;
-        }
+      form input {
+        padding: 8px;
+      }
 
-        form label {
-            font-weight: bold;
-        }
+      form label {
+        font-weight: bold;
+      }
 
-        form div {
-            margin: 16px 0px;
-        }
+      form div {
+        margin: 16px 0px;
+      }
 
-        .invalid {
-            border: 1px solid red;
-            content: "X";
-        }
+      .invalid {
+        border: 1px solid red;
+      }
 
-        .invalid:after {
-            content: "";
-            color: red;
-        }
+      .invalid-icon::before {
+        content: "\f00d";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: red;
+      }
 
-        .valid {
-            border: 1px solid green;
-            content: "✓";
-        }
+      .valid {
+        border: 1px solid green;
+      }
 
-        .valid:after {
-            content: "";
-            color: green;
-        }
+      .valid-icon::before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: green;
+      }
 
-        .error {
-            color: red;
-            font-size: 14px;
-            margin-top: 5px;
-        }
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+      }
 
-        .error-icon {
-            margin-left: 5px;
-            color: red;
-        }
+      .error-icon {
+        margin-left: 5px;
+        color: red;
+      }
     </style>
-</head>
-
-<body>
+  </head>
+  <body>
     <div id="login-container">
-
-        <form>
-            <div>
-                <label for="username">Username:</label>
-                <input id="username" type="text">
-            </div>
-
-            <div>
-                <label for="password">Password:</label>
-                <input id="password" type="password">
-            </div>
-
-            <input type="submit" value="Login">
-            <button id="clear-btn" type="button" class="btn btn-outline-secondary">Clear</button>
-
-        </form>
-
-        <!-- ovdje dodajemo div s klasom errors -->
-        <div class="errors">
-            <div class="error"></div>
+      <form>
+        <div>
+          <label for="username">Username:</label>
+          <input id="username" type="text" />
         </div>
+
+        <div>
+          <label for="password">Password:</label>
+          <input id="password" type="password" />
+        </div>
+
+        <input type="submit" value="Login" />
+        <button id="clear-btn" type="reset" class="btn btn-outline-secondary">Clear</button>
+
+
+      </form>
+
+      <!-- ovdje dodajemo div s klasom errors -->
+      <div class="errors">
+        <div class="error"></div>
+      </div>
     </div>
 
     <script src="js/formValidation.js"></script>
-    <script src="js/form.js"></script>
     <script src="js/formIcons.js"></script>
+    <script src="js/form.js"></script>
     <script src="js/formClear.js"></script>
-    
-    
-
 
 </body>
 
