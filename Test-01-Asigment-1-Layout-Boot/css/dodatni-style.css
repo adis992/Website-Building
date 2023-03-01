@@ -3,7 +3,7 @@ html {
    min-width: 400px;
 }
 
-h3 {
+h3{
     
     font-size: 1.5em;
     font-weight: 600;
@@ -125,7 +125,3 @@ ul li:before {
   content: none;
 }
 
-h3 h4 {
-  font-style: bold;
-  
-}
