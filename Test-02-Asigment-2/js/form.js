@@ -67,24 +67,24 @@ var form = (function () {
     var errorsDiv = document.createElement('div');
     errorsDiv.classList.add('errors');
     errors.forEach(function (error) {
-    var errorDiv = document.createElement('div');
-    errorDiv.classList.add('error');
-    errorDiv.innerText = error;
-    errorsDiv.appendChild(errorDiv);
+      var errorDiv = document.createElement('div');
+      errorDiv.classList.add('error');
+      errorDiv.innerText = error;
+      errorsDiv.appendChild(errorDiv);
     });
     var formElement = document.querySelector('form'); // promijenjena varijabla form u formElement
     formElement.appendChild(errorsDiv);
-    }
-    
-    function clearFormErrors() {
+  }
+
+  function clearFormErrors() {
     var errors = document.querySelectorAll('.error');
     errors.forEach(function (error) {
-    error.parentNode.removeChild(error);
+      error.parentNode.removeChild(error);
     });
     formValidation.clearFormErrors(document.querySelector('form'));
-    }
-    
-    return {
+  }
+
+  return {
     init: init,
     showFormErrors: showFormErrors,
     clearFormErrors: clearFormErrors
@@ -95,3 +95,6 @@ var form = (function () {
 document.addEventListener('DOMContentLoaded', function () {
   form.init();
 });
+HTMLFormElement.prototype.clearFormErrors = function() {
+  // Implementacija funkcije
+}
