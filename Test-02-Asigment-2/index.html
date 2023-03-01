@@ -1,62 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Assignment 2 - Website Building</title>
-        <style>
-            body {
-                box-sizing: border-box;
-                font-family: sans-serif;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <script src="js/java.js"></script>
+    <title>Assignment 2 - Website Building</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
 
-            #login-container {
-                width: 460px;
-                margin: 0 auto;
-            }
+        #login-container {
+            width: 460px;
+            margin: 0 auto;
+        }
 
-            form label,
-            form input {
-                width: 100%;
-                box-sizing: border-box;
-            }
+        form label,
+        form input {
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-            form input {
-                padding: 8px;
-            }
+        form input {
+            padding: 8px;
+        }
 
-            form label {
-                font-weight: bold;
-            }
+        form label {
+            font-weight: bold;
+        }
 
-            form div {
-                margin: 16px 0px;
-            }
-        </style>
-    </head>
+        form div {
+            margin: 16px 0px;
+        }
 
-    <body>
+        .invalid {
+            border: 1px solid red;
+            background-color: red;
+        }
 
-        <div id="login-container">
+        .invalid:after {
+            content: "X";
+            color: red;
 
-            <form>
-                <div>
-                    <label for="username">Username:</label>
-                    <input id="username" type="text">
-                </div>
+        }
 
-                <div>
-                    <label for="password">Password:</label>
-                    <input id="password" type="password">
-                </div>
+        .valid {
+            border: 1px solid green;
+            background-color: green;
+        }
 
-                <input type="submit" value="Login">
-            </form>
-            <script src="js/java.js" ></script>
+        .valid:after {
+            content: "✓";
+            color: green;
 
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .error-icon {
+
+            margin-left: 5px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="login-container">
+
+        <form>
+            <div>
+                <label for="username">Username:</label>
+                <input id="username" type="text">
+            </div>
+
+            <div>
+                <label for="password">Password:</label>
+                <input id="password" type="password">
+            </div>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <div class="errors">
+            <div class="error"></div>
         </div>
+    </div>
 
-    </body>
+</body>
 </html>
-
